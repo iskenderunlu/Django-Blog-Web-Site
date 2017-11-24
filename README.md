@@ -1,2 +1,3 @@
-# My-First-Django-Project-
+Django Blog Web Project
+
 Blog
