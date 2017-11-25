@@ -1,23 +1,28 @@
 {% load staticfiles %}
 <html>
     <head>
-        <title>Django Girls blog</title>
+        <title>Welcome to your blog</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
-        <div class="page-header">
-            <h1><a href="/">Wellcome to your Blog</a></h1>
-        </div>
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-                {% block content %}
-                {% endblock %}
-                </div>
-            </div>
-        </div>
+      <header>
+        <h1>Django Simple Login</h1>
+        {% if user.is_authenticated %}
+          Hi {{ user.username }}!
+          <a href="{% url 'logout' %}">logout</a>
+        {% else %}
+          <a href="{% url 'login' %}">login</a>
+        {% endif %}
+      </header>
+      <hr>
+      <main>
+        {% block content %}
+        {% endblock %}
+      </main>
+      <hr>
+      
     </body>
 </html>
