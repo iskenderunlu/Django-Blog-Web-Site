@@ -1,3 +1,2 @@
-Django Blog Web Project
-
-Blog
+# Django-Blog-Web-Site
+Django Blog Web Application
