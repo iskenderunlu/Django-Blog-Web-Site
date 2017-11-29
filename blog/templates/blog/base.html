@@ -1,7 +1,9 @@
 {% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
 <html>
     <head>
-        <title>Welcome to your blog</title>
+        <title>Personal Blog</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -9,12 +11,13 @@
     </head>
     <body>
       <header>
-        <h1>Django Simple Login</h1>
+        <h1>Welcome to my blog</h1>
         {% if user.is_authenticated %}
           Hi {{ user.username }}!
-          <a href="{% url 'logout' %}">logout</a>
+          <a href="/accounts/logout">logout</a>
         {% else %}
-          <a href="{% url 'login' %}">login</a>
+          <a href="/accounts/login">login</a>
+          <a href="/accounts/register">register</a>
         {% endif %}
       </header>
       <hr>
@@ -23,6 +26,6 @@
         {% endblock %}
       </main>
       <hr>
-      
+
     </body>
 </html>
